@@ -1,8 +1,8 @@
 # NumInfo (FRANCE)
 Know the operator of a phone number, 
-You can also know the award date.  
+you can also know the award date.  
 If it is a number prepay the number of recharges, 
-But for that you have to create more parse
+but for that you have to create more parse
 
 
 I recommend using open bullet to use this script :
