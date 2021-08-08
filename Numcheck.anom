@@ -1,0 +1,14 @@
+REQUEST GET "https://www.aquiappartientcenumero.com/<USER>" 
+  
+  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+
+PARSE "<SOURCE>" LR "téléphonique : <b class='c9'>" "</b>" CreateEmpty=FALSE -> CAP "" 
+
+KEYCHECK 
+  KEYCHAIN Success OR 
+    KEY "Quel est l'opérateur de ce numéro ?" 
+  KEYCHAIN Failure OR 
+    KEY "<SOURCE>" DoesNotContain "Quel est l'opérateur de ce numéro ?" 
+
